@@ -1,0 +1,9 @@
+/.bundle/
+/pkg/
+/tmp/
+*.gem
+
+# Test artifacts
+/test/dummy/tmp/
+/test/dummy/log/
+/test/dummy/db/*.sqlite3
