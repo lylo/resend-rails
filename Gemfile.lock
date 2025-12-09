@@ -3,6 +3,7 @@ PATH
   specs:
     resend-rails (0.1.0)
       actionmailbox (>= 8.0)
+      nokogiri
       resend (>= 0.8)
 
 GEM
