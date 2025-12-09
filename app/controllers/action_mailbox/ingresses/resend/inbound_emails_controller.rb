@@ -87,6 +87,7 @@ module ActionMailbox
         mail.cc = data["cc"] if data["cc"].present?
         mail.subject = data["subject"]
         mail.message_id = data["message_id"] if data["message_id"].present?
+        mail.date = Time.parse(data["created_at"]) if data["created_at"].present?
 
         build_mail_body(mail, data["text"], html_body, inline_attachments, regular_attachments)
         mail.to_s
