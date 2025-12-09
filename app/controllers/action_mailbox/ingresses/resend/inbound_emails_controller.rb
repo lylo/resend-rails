@@ -85,9 +85,15 @@ module ActionMailbox
         mail.from = data["from"]
         mail.to = data["to"]
         mail.cc = data["cc"] if data["cc"].present?
+        mail.reply_to = data["reply_to"] if data["reply_to"].present?
         mail.subject = data["subject"]
         mail.message_id = data["message_id"] if data["message_id"].present?
         mail.date = Time.parse(data["created_at"]) if data["created_at"].present?
+
+        if data["headers"].present?
+          mail.in_reply_to = data["headers"]["in-reply-to"] if data["headers"]["in-reply-to"].present?
+          mail.references = data["headers"]["references"] if data["headers"]["references"].present?
+        end
 
         build_mail_body(mail, data["text"], html_body, inline_attachments, regular_attachments)
         mail.to_s
