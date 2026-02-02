@@ -21,5 +21,4 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "actionmailbox", ">= 8.0"
   spec.add_dependency "resend", ">= 0.8"
-  spec.add_dependency "nokogiri"
 end

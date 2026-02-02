@@ -58,7 +58,7 @@ Subscribe to the `email.received` event.
 2. Resend sends an `email.received` webhook to your application
 3. The gem verifies the webhook signature using the Svix library
 4. The full email data is fetched from the Resend API
-5. An RFC 822 message is reconstructed (including inline and regular attachments)
+5. The raw RFC 822 email is downloaded from Resend
 6. The message is passed to Action Mailbox for routing to your mailboxes
 
 ## Requirements
@@ -66,6 +66,7 @@ Subscribe to the `email.received` event.
 - Ruby >= 3.1
 - Rails >= 8.0 (Action Mailbox)
 - [resend](https://github.com/resend/resend-ruby) gem >= 0.8
+- Raw email access enabled on your Resend account
 
 ## License
 
