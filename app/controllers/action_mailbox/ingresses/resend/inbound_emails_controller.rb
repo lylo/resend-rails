@@ -76,7 +76,7 @@ module ActionMailbox
         download_url = email_data.dig(:raw, "download_url")
         raise "Raw email not available from Resend" unless download_url
 
-        URI.open(download_url, &:read)
+        URI.open(download_url, open_timeout: 10, read_timeout: 30, &:read)
       end
   end
 end
