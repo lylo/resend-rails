@@ -1,5 +1,8 @@
 # Resend Rails
 
+> **Warning**
+> This gem is experimental and not yet production ready. Resend's inbound email API is still in development and may change. Use at your own risk.
+
 Resend inbound email ingress for Action Mailbox.
 
 This gem allows Rails applications to receive inbound emails via [Resend](https://resend.com) webhooks and process them using Action Mailbox.
